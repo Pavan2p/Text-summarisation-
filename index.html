@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBC News Summarizer</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 40px;
+        }
+        .container {
+            max-width: 800px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">BBC News Summarizer</h1>
+        <form method="POST" action="/">
+            <div class="form-group">
+                <label for="news_paragraph">News Paragraph</label>
+                <textarea class="form-control" id="news_paragraph" name="news_paragraph" rows="10" placeholder="Enter the news paragraph" required>{{ original_text }}</textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Summarize</button>
+        </form>
+        {% if summary %}
+        <div class="mt-4">
+            <h2>Summary</h2>
+            <p>{{ summary }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
